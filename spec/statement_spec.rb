@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'statement.rb'
+require './statement.rb'
 
 describe Statement do
 
