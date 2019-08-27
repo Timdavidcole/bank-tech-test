@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'date'
+
 class Statement
   def self.create(balance, transactions)
     Statement.new(balance, transactions).return_statement
@@ -31,11 +33,19 @@ class Statement
   end
 
   def withdrawal(transaction)
-    "#{transaction[1]} || || #{transaction[0] * -1} || #{@balance}"
+    "#{date(transaction)} || || #{sprintf("%.2f",(transaction[0] * -1))} || #{balance}"
   end
 
   def deposit(transaction)
-    "#{transaction[1]} || #{transaction[0]} || || #{@balance}"
+    "#{date(transaction)} || #{sprintf("%.2f",transaction[0])} || || #{balance}"
+  end
+
+  def date(transaction)
+    transaction[1].strftime("%e/%m/%Y")
+  end
+
+  def balance
+    sprintf("%.2f",@balance)
   end
 
   def change_balance(transaction)
