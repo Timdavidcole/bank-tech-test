@@ -38,12 +38,19 @@ describe Bank do
   # So that I can get an overview of my account,
   # I want to be able to print my statement.
 
-  describe "#print_statement" do
+  describe "#return_statement" do
     it "allows a user to view all transactions" do
-      subject.deposit(1000, '14/01/2012')
+      subject.deposit(1000, '10/01/2012')
       subject.deposit(2000, '13/01/2012')
       subject.withdraw(500, '14/01/2012')
-      expect(subject.print_statement).to eq (["date || credit || debit || balance", "14/01/2012 || || 500 || 2500", "13/01/2012 || 2000 || || 3000", "14/01/2012 || 1000 || || 1000"])
+      expect(subject.return_statement).to eq (["date || credit || debit || balance", "14/01/2012 || || 500 || 2500", "13/01/2012 || 2000 || || 3000", "10/01/2012 || 1000 || || 1000"])
+    end
+    it "another statement check" do
+      subject.deposit(7000, '10/01/2012')
+      subject.deposit(3000, '13/01/2012')
+      subject.withdraw(742, '14/01/2012')
+      subject.withdraw(872, '16/01/2012')
+      expect(subject.return_statement).to eq (["date || credit || debit || balance", "16/01/2012 || || 872 || 8386", "14/01/2012 || || 742 || 9258", "13/01/2012 || 3000 || || 10000", "10/01/2012 || 7000 || || 7000"])
     end
   end
 
