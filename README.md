@@ -1,3 +1,32 @@
+# Bank Tech Test
+
+## Description
+
+- This was tech interview practise test for Makers Bootcamp.  The idea was a complete a command line only program, which offered simple banking functionality.
+
+## Techstack
+
+```
+Ruby 2.6.3
+Rspec 3.8
+Rubocop 0.74.0
+simplecov 0.17.0
+```
+
+## Installation
+
+To install
+```
+git clone git@github.com:Timdavidcole/bank-tech-test.git
+cd bank-tech-test
+gem install bundler
+bundle install
+## to run tests
+rspec
+## to run program
+ruby lib/bank.rb
+```
+
 ## Acceptance criteria
 
 Given a client makes a deposit of 1000 on 10-01-2012
