@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 
 require 'bank.rb'
+require 'Timecop'
 
 describe Bank do
+
+  before do
+    Timecop.freeze(Time.local(1999, 12, 31,))
+  end
+
   # As a user,
   # So that I can see how much money I have,
   # I want to be able to view my balance.
@@ -19,7 +25,7 @@ describe Bank do
 
   describe '#deposit' do
     it 'allows a user to deposit money' do
-      subject.deposit(1000, '10/01/2012')
+      subject.deposit(1000)
       expect(subject.show_balance).to eq 1000
     end
   end
@@ -30,7 +36,7 @@ describe Bank do
 
   describe '#withdraw' do
     it 'allows a user to withdraw money' do
-      subject.withdraw(500, '14/01/2012')
+      subject.withdraw(500)
       expect(subject.show_balance).to eq(-500)
     end
   end
@@ -49,28 +55,28 @@ describe Bank do
     it 'allows a user to view all transactions' do
       statement = [
         'date || credit || debit || balance',
-        '14/01/2012 || || 500 || 2500',
-        '13/01/2012 || 2000 || || 3000',
-        '10/01/2012 || 1000 || || 1000'
+        '31/12/1999 || || 500 || 2500',
+        '31/12/1999 || 2000 || || 3000',
+        '31/12/1999 || 1000 || || 1000'
       ]
-      subject.deposit(1000, '10/01/2012')
-      subject.deposit(2000, '13/01/2012')
-      subject.withdraw(500, '14/01/2012')
+      subject.deposit(1000)
+      subject.deposit(2000)
+      subject.withdraw(500)
       expect(subject.return_statement).to eq statement
     end
 
     it 'another statement check' do
       statement = [
         'date || credit || debit || balance',
-        '16/01/2012 || || 872 || 8386',
-        '14/01/2012 || || 742 || 9258',
-        '13/01/2012 || 3000 || || 10000',
-        '10/01/2012 || 7000 || || 7000'
+        '31/12/1999 || || 872 || 8386',
+        '31/12/1999 || || 742 || 9258',
+        '31/12/1999 || 3000 || || 10000',
+        '31/12/1999 || 7000 || || 7000'
       ]
-      subject.deposit(7000, '10/01/2012')
-      subject.deposit(3000, '13/01/2012')
-      subject.withdraw(742, '14/01/2012')
-      subject.withdraw(872, '16/01/2012')
+      subject.deposit(7000)
+      subject.deposit(3000)
+      subject.withdraw(742)
+      subject.withdraw(872)
       expect(subject.return_statement).to eq statement
     end
   end
