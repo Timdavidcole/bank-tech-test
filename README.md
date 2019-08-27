@@ -9,7 +9,7 @@
 - I decided to TDD as much as possible.  Using ruby with rspec.
 - One of my main aims was not to make it too complicated or go off spec, as I have done in the past.  So I've not taken any leaps of faith and just implemented what they asked for
 - Started off by making the Bank class, which started to get a little cumbersome, so refactored in a Statement class to do the heavy lifting there.  Found it hard to TDD the new class.
-- I think I should have planned more, as I probably would have made a Statement class from the beginning if so.  But in the past I have tended to over OOP so this forces me to only do it when necessary.
+- I think I should have planned more, as I probably would have made a Statement class from the beginning if so.  But in the past I have tended to over OOP, and over plan, so this forces me to only do it when necessary.
 
 ## Techstack
 
