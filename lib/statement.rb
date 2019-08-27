@@ -33,19 +33,19 @@ class Statement
   end
 
   def withdrawal(transaction)
-    "#{date(transaction)} || || #{sprintf("%.2f",(transaction[0] * -1))} || #{balance}"
+    "#{date(transaction)} || || #{format('%.2f', (transaction[0] * -1))} || #{balance}"
   end
 
   def deposit(transaction)
-    "#{date(transaction)} || #{sprintf("%.2f",transaction[0])} || || #{balance}"
+    "#{date(transaction)} || #{format('%.2f', transaction[0])} || || #{balance}"
   end
 
   def date(transaction)
-    transaction[1].strftime("%e/%m/%Y")
+    transaction[1].strftime('%e/%m/%Y')
   end
 
   def balance
-    sprintf("%.2f",@balance)
+    format('%.2f', @balance)
   end
 
   def change_balance(transaction)

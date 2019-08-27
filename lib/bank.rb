@@ -20,13 +20,12 @@ class Bank
   end
 
   def show_balance
-    sprintf("%.2f",@balance)
+    format('%.2f', @balance)
   end
 
   def return_statement(statement = Statement)
     statement.create(@balance, @transactions)
   end
-
 end
 
 # bank = Bank.new

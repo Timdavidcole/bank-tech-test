@@ -4,9 +4,8 @@ require 'bank.rb'
 require 'Timecop'
 
 describe Bank do
-
   before do
-    Timecop.freeze(Time.local(1999, 12, 31,))
+    Timecop.freeze(Time.local(1999, 12, 31))
   end
 
   # As a user,
@@ -15,7 +14,7 @@ describe Bank do
 
   describe '#show_balance' do
     it 'allows a user to view their balance' do
-      expect(subject.show_balance).to eq "0.00"
+      expect(subject.show_balance).to eq '0.00'
     end
   end
 
@@ -26,7 +25,7 @@ describe Bank do
   describe '#deposit' do
     it 'allows a user to deposit money' do
       subject.deposit(1000)
-      expect(subject.show_balance).to eq "1000.00"
+      expect(subject.show_balance).to eq '1000.00'
     end
   end
 
@@ -37,7 +36,7 @@ describe Bank do
   describe '#withdraw' do
     it 'allows a user to withdraw money' do
       subject.withdraw(500)
-      expect(subject.show_balance).to eq("-500.00")
+      expect(subject.show_balance).to eq('-500.00')
     end
   end
 

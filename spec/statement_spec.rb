@@ -3,7 +3,6 @@
 require_relative '../lib/statement.rb'
 
 describe Statement do
-
   statement_array = [
     'date || credit || debit || balance',
     '14/01/2012 || || 500.00 || 2500.00',
@@ -13,16 +12,16 @@ describe Statement do
   balance = 2500
 
   before(:each) do
-    time_1 = double(:time_1)
-    allow(time_1).to receive(:strftime).and_return('10/01/2012')
-    time_2 = double(:time_2)
-    allow(time_2).to receive(:strftime).and_return('13/01/2012')
-    time_3 = double(:time_3)
-    allow(time_3).to receive(:strftime).and_return('14/01/2012')
+    time1 = double(:time1)
+    allow(time1).to receive(:strftime).and_return('10/01/2012')
+    time2 = double(:time2)
+    allow(time2).to receive(:strftime).and_return('13/01/2012')
+    time3 = double(:time3)
+    allow(time3).to receive(:strftime).and_return('14/01/2012')
     @transactions = [
-      [1000, time_1],
-      [2000, time_2],
-      [-500, time_3]
+      [1000, time1],
+      [2000, time2],
+      [-500, time3]
     ]
   end
 
