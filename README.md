@@ -27,6 +27,16 @@ rspec
 ruby lib/bank.rb
 ```
 
+To use
+
+```
+bank = Bank.new ## creates new bank account
+bank.deposit(amount, date) ## deposits money
+bank.withdrawal(amount, date) ## withdraws money
+print bank.show_balance ## prints current balance to console
+puts bank.return_statement ## prints statement to console
+```
+
 ## Acceptance criteria
 
 Given a client makes a deposit of 1000 on 10-01-2012
