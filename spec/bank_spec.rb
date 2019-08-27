@@ -28,7 +28,7 @@ describe Bank do
   # So that I can spend my money,
   # I want to be able to withdraw money.
 
-  describe '#deposit' do
+  describe '#withdraw' do
     it 'allows a user to withdraw money' do
       subject.withdraw(500, '14/01/2012')
       expect(subject.show_balance).to eq(-500)
