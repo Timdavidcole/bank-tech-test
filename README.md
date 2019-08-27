@@ -47,6 +47,30 @@ print bank.show_balance ## prints current balance to console
 puts bank.return_statement ## prints statement to console
 ```
 
+Example usage
+
+```
+irb(main):001:0> require './lib/bank.rb'
+=> true
+irb(main):002:0> bank = Bank.new
+=> #<Bank:0x00007f8f2791f3a8 @balance=0, @transactions=[]>
+irb(main):003:0> bank.deposit(30)
+=> [[30, #<Date: 2019-08-27 ((2458723j,0s,0n),+0s,2299161j)>]]
+irb(main):004:0> bank.deposit(40)
+=> [[30, #<Date: 2019-08-27 ((2458723j,0s,0n),+0s,2299161j)>], [40, #<Date: 2019-08-27 ((2458723j,0s,0n),+0s,2299161j)>]]
+irb(main):005:0> bank.withdraw(20)
+=> [[30, #<Date: 2019-08-27 ((2458723j,0s,0n),+0s,2299161j)>], [40, #<Date: 2019-08-27 ((2458723j,0s,0n),+0s,2299161j)>], [-20, #<Date: 2019-08-27 ((2458723j,0s,0n),+0s,2299161j)>]]
+irb(main):006:0> print bank.show_balance
+50.00=> nil
+irb(main):008:0> puts bank.return_statement
+date || credit || debit || balance
+27/08/2019 || || 20.00 || 50.00
+27/08/2019 || 40.00 || || 70.00
+27/08/2019 || 30.00 || || 30.00
+=> nil
+irb(main):009:0>
+```
+
 ## Acceptance criteria
 
 Given a client makes a deposit of 1000 on 10-01-2012
