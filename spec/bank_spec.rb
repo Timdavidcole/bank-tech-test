@@ -34,11 +34,18 @@ describe Bank do
     end
   end
 
-end
+  # As a user,
+  # So that I can get an overview of my account,
+  # I want to be able to print my statement.
 
-# As a user,
-# So that I can spend my money,
-# I want to be able to withdraw money.
+  describe "#print_statement" do
+    it "allows a user to view all transactions" do
+      subject.withdraw(200)
+      expect(subject.show_balance).to eq -200
+    end
+  end
+
+end
 
 # As a user,
 # So that I can get an overview of my account,
