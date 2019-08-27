@@ -2,7 +2,7 @@
 
 ## Description
 
-- This was tech interview practise test for Makers Bootcamp.  The idea was a complete a command line only program, which offered simple banking functionality.
+- This was tech interview practise test for Makers Bootcamp.  The idea was to complete a command line only program, which offered simple banking functionality.
 
 ## My approach
 
