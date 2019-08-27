@@ -68,7 +68,6 @@ date || credit || debit || balance
 27/08/2019 || 40.00 || || 70.00
 27/08/2019 || 30.00 || || 30.00
 => nil
-irb(main):009:0>
 ```
 
 ## Acceptance criteria
