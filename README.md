@@ -40,8 +40,8 @@ To use
 
 ```
 bank = Bank.new ## creates new bank account
-bank.deposit(amount, date) ## deposits money
-bank.withdrawal(amount, date) ## withdraws money
+bank.deposit(amount) ## deposits money
+bank.withdrawal(amount) ## withdraws money
 print bank.show_balance ## prints current balance to console
 puts bank.return_statement ## prints statement to console
 ```
