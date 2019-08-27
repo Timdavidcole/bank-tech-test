@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'statement.rb'
 
 class Bank
-
-  def initialize()
+  def initialize
     @balance = 0
     @transactions = []
   end
@@ -24,5 +25,4 @@ class Bank
   def return_statement(statement = Statement)
     statement.create(@balance, @transactions)
   end
-
 end

@@ -1,5 +1,6 @@
-class Statement
+# frozen_string_literal: true
 
+class Statement
   def self.create(balance, transactions)
     Statement.new(balance, transactions).return_statement
   end
@@ -20,14 +21,21 @@ class Statement
 
   def format_statement
     @transactions.reverse_each do |transaction|
-      if transaction[0] < 0
-        @statement.push("#{transaction[1]} || || #{transaction[0]*-1} || #{@balance}")
-        change_balance(transaction[0])
+      if transaction[0].negative?
+        @statement.push(withdrawal(transaction))
       else
-        @statement.push("#{transaction[1]} || #{transaction[0]} || || #{@balance}")
-        change_balance(transaction[0])
+        @statement.push(deposit(transaction))
       end
+      change_balance(transaction[0])
     end
+  end
+
+  def withdrawal(transaction)
+    "#{transaction[1]} || || #{transaction[0] * -1} || #{@balance}"
+  end
+
+  def deposit(transaction)
+    "#{transaction[1]} || #{transaction[0]} || || #{@balance}"
   end
 
   def change_balance(transaction)
@@ -35,7 +43,6 @@ class Statement
   end
 
   def format_header
-    @statement.push("date || credit || debit || balance")
+    @statement.push('date || credit || debit || balance')
   end
-
 end
