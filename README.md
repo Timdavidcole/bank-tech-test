@@ -33,7 +33,8 @@ bundle install
 ## to run tests
 rspec
 ## to run program
-ruby lib/bank.rb
+IRB
+require './lib/bank.rb'
 ```
 
 To use
@@ -41,7 +42,7 @@ To use
 ```
 bank = Bank.new ## creates new bank account
 bank.deposit(amount) ## deposits money
-bank.withdrawal(amount) ## withdraws money
+bank.withdraw(amount) ## withdraws money
 print bank.show_balance ## prints current balance to console
 puts bank.return_statement ## prints statement to console
 ```
