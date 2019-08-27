@@ -9,14 +9,14 @@ class Bank
     @transactions = []
   end
 
-  def deposit(amount, date = date_today)
+  def deposit(amount)
     @balance += amount
-    @transactions.push([amount, date])
+    @transactions.push([amount, date_today])
   end
 
-  def withdraw(amount, date = date_today)
+  def withdraw(amount)
     @balance -= amount
-    @transactions.push([(amount * -1), date])
+    @transactions.push([(amount * -1), date_today])
   end
 
   def show_balance
