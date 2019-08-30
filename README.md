@@ -11,6 +11,7 @@
 - Started off by making the Bank class, which started to get a little cumbersome, so refactored in a Statement class to do the heavy lifting there.  Found it hard to TDD the new class.
 - I think I should have planned more, as I probably would have made a Statement class from the beginning if so.  But in the past I have tended to over OOP, and over plan, so this forces me to only do it when necessary.
 - I end up using Timecop, a pretty handy gem, for hard setting the time for testing.
+- There was a fair bit of debate in our cohort as to wether to make 2 or 3 classes, ie extract out a transaction class.  Personally I was against it because I did really see the point of making a class with no functionality, that's just a glorified relational data row.  Much quicker and easier to make the information an array.  Obviously if we started needing a more CRUD like capability for each transaction it would definitely be worth refactoring out a new class.
 
 ## Techstack
 
