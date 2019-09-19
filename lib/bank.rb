@@ -27,11 +27,3 @@ class Bank
     statement.create(@balance, @transactions)
   end
 end
-
-# bank = Bank.new
-# bank.deposit(30)
-# bank.deposit(40)
-# bank.withdraw(50)
-# bank.withdraw(50)
-# puts bank.show_balance
-# puts bank.return_statement
